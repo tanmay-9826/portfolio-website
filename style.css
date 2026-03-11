@@ -1,0 +1,296 @@
+/* =========================================
+   1. GLOBAL SETUP & TYPOGRAPHY
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff; /* Clean white background */
+    color: #333;
+    position: relative;
+    overflow: hidden; /* Keeps the glowing cursor from creating scrollbars */
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #111;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* =========================================
+   2. CUSTOM RAINBOW CURSOR
+========================================= */
+.cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: conic-gradient(
+        from 0deg, 
+        #ff3b30, #ff9500, #ffcc00, #4cd964, #5ac8fa, #007aff, #5856d6, #ff2d55, #ff3b30
+    );
+    filter: blur(40px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transition: top 0.1s ease, left 0.1s ease;
+    animation: rotateRainbow 8s linear infinite;
+    opacity: 0.6; 
+}
+
+@keyframes rotateRainbow {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* =========================================
+   3. MAIN CONTAINER & SCROLLING
+========================================= */
+.content-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    max-height: 75vh; /* Forces the box to stop growing and start scrolling */
+    overflow-y: auto; /* Enables vertical scrolling */
+    margin-bottom: 80px; /* Leaves room for the bottom nav */
+    
+    /* Hides the ugly default scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hides scrollbar for Chrome/Safari */
+.content-container::-webkit-scrollbar {
+    display: none;
+}
+
+section {
+    display: none;
+    animation: fadeIn 0.4s ease;
+    padding-bottom: 20px; /* Extra breathing room at the bottom */
+}
+
+section.active-section {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   4. PROFILE AVATAR
+========================================= */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    background-image: url('https://avatars.githubusercontent.com/tanmay-9826');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   5. CARDS & GRIDS (Projects & Contact)
+========================================= */
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.2s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.project-link {
+    text-decoration: none;
+    color: #111;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: #8A2BE2; 
+}
+
+.link-card {
+    text-align: center;
+    text-decoration: none;
+    color: #111;
+    font-weight: 600;
+}
+
+.link-card i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   6. SKILLS GRID & PROGRESS BARS
+========================================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for desktop */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #eee;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* =========================================
+   7. FLOATING BOTTOM NAVIGATION
+========================================= */
+.bottom-nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    gap: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: #f0f0f0;
+    color: #111;
+}
+
+.nav-btn.active {
+    background: #111;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   8. MOBILE RESPONSIVENESS
+========================================= */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    /* Stack the skills into 1 single column on small screens */
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust the floating nav bar to fit phone screens */
+    .bottom-nav {
+        width: 90%;
+        padding: 8px 15px;
+        gap: 5px;
+        justify-content: space-between;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Hide the custom cursor on touch devices */
+    .cursor-glow {
+        display: none;
+    }
+}
