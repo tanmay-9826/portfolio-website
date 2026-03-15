@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,103 +8,466 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <div id="preloader">
+        
+        <div class="stars-container">
+            <div class="star blue"></div>
+            <div class="star red"></div>
+            <div class="star green"></div>
+            <div class="star yellow"></div>
+            <div class="star purple"></div>
+        </div>
+
+        <div class="loader-container">
+            <svg class="progress-ring" width="180" height="180">
+                <circle class="progress-ring__circle" stroke="#00d2ff" stroke-width="4" fill="transparent" r="85" cx="90" cy="90"/>
+            </svg>
+            <div class="loader-percentage" id="loader-text">0%</div>
+            <div class="loader-avatar-img"></div>
+        </div>
+    </div>
 
     <div class="cursor-glow"></div>
 
+    <div class="menu-icon" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="side-nav" id="sideNav">
+        <div class="close-btn" id="closeNav">&times;</div>
+        <nav class="side-menu-links">
+            <button class="side-link" data-target="me">Home</button>
+            <button class="side-link" data-target="reads">My Reads</button>
+            <button class="side-link" data-target="achievements">Achievements</button>
+        </nav>
+    </div>
+
     <main class="content-container">
-        
+
         <section id="me" class="active-section">
             <div class="avatar"></div>
             <h1>Hi, I'm Tanmay 👋</h1>
             <h2>AI Engineer</h2>
             <p>Aiming for mastery in AI systems, computer vision, and structured problem solving.</p>
+
+            <div class="resume-box">
+                <a href="resume.pdf" download="Tanmay_Chikhalikar_Resume.pdf" class="resume-btn">
+                    <i class="fas fa-file-pdf"></i> Download My Resume
+                </a>
+            </div>
+        </section>
+
+        <section id="reads">
+            <h2>My Reads</h2>
+            <div class="grid">
+                <div class="card" style="padding: 20px; border-radius: 15px;">
+                    <p>📚 Coming soon: A collection of books, papers, and articles I'm currently exploring in the world
+                        of AI and systems engineering.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <div class="grid">
+                <div class="card" style="padding: 20px; border-radius: 15px;">
+                    <p>🏆 Coming soon: Documenting milestones, hackathons, and certifications in my engineering journey.
+                    </p>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
             <h2>Featured Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3><a href="https://github.com/tanmay-9826/EcoReceipt" target="_blank" class="project-link">EcoReceipt Analyzer 🌱 <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></h3>
-                    <p>Cloud-based system using OCR to detect harmful ingredients in receipts and suggest safer alternatives.</p>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="window-controls">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">🌐</div>
+                            <div class="title-text">
+                                <h3><a href="https://edgetrack-showcase.netlify.app/" target="_blank"
+                                        class="project-link">EdgeTrack <i class="fas fa-external-link-alt"
+                                            style="font-size: 0.7rem;"></i></a></h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">A complete showcase website built for an AI-powered tracking and
+                            monitoring system.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JS</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="status-dot ongoing"></span> In Development
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3><a href="https://github.com/tanmay-9826/Food-Expiry-Tracker-C" target="_blank" class="project-link">Food Expiry Tracker 🍎 <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></h3>
-                    <p>Terminal-based C system utilizing Linked Lists to track items and identify expired products.</p>
+
+                <div class="project-card">
+                    <div class="window-controls">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">✋</div>
+                            <div class="title-text">
+                                <h3><a href="https://huggingface.co/spaces/godspell-og/Hand-Finger-Counter"
+                                        target="_blank" class="project-link">Gesture Tracking <i
+                                            class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a></h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">Real-time finger counting and hand landmark tracking system deployed on
+                            HuggingFace Spaces.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">MediaPipe</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="status-dot ongoing"></span> In Development
+                        </div>
+                    </div>
                 </div>
-                <div class="card">
-                    <h3><a href="https://github.com/tanmay-9826/Hand-finger-counter" target="_blank" class="project-link">Hand Gesture Detection ✋ <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a></h3>
-                    <p>Real-time finger counting and landmark tracking system built with OpenCV and MediaPipe.</p>
+
+                <div class="project-card">
+                    <div class="window-controls">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">🌱</div>
+                            <div class="title-text">
+                                <h3><a href="https://ecoreceipt-analyzer.streamlit.app/" target="_blank"
+                                        class="project-link">EcoReceipt <i class="fas fa-external-link-alt"
+                                            style="font-size: 0.7rem;"></i></a></h3>
+                                <span class="project-year">2026</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">Cloud-based app using OCR to detect harmful ingredients in receipts and
+                            suggest greener alternatives.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">OCR</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="status-dot completed"></span> Completed
+                        </div>
+                    </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="window-controls">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">🌾</div>
+                            <div class="title-text">
+                                <h3><a href="https://github.com/tanmay-9826/Crop-Recommendation-System" target="_blank"
+                                        class="project-link">CropML App <i class="fas fa-external-link-alt"
+                                            style="font-size: 0.7rem;"></i></a></h3>
+                                <span class="project-year">2025</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">Flask web application powered by machine learning that suggests optimal
+                            crops using soil nutrient data.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">ML</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="status-dot ongoing"></span> In Development
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="window-controls">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">🌸</div>
+                            <div class="title-text">
+                                <h3><a href="https://copy-of-kas-plateau.vercel.app/" target="_blank"
+                                        class="project-link">Kas Plateau UI <i class="fas fa-external-link-alt"
+                                            style="font-size: 0.7rem;"></i></a></h3>
+                                <span class="project-year">2025</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">Frontend redesign and fully responsive web clone of the popular Kas
+                            Plateau tourism website.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Vercel</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="status-dot completed"></span> Completed
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="window-controls">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <div class="project-icon">🍎</div>
+                            <div class="title-text">
+                                <h3><a href="https://github.com/tanmay-9826/Food-Expiry-Tracker-C" target="_blank"
+                                        class="project-link">Expiry Tracker <i class="fas fa-external-link-alt"
+                                            style="font-size: 0.7rem;"></i></a></h3>
+                                <span class="project-year">2025</span>
+                            </div>
+                        </div>
+                        <p class="project-desc">Smart terminal-based tracking system built using C with Linked Lists and
+                            an animated CLI interface.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">C</span>
+                            <span class="tech-tag">Data Structures</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="status-dot completed"></span> Completed
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-       <section id="skills">
+        <section id="skills">
             <h2>Technical Arsenal</h2>
-            
-            <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.1rem; color: #777;">Programming Languages</h3>
+
+            <h3>Programming Languages</h3>
             <div class="skills-grid">
                 <div class="skill-card">
                     <i class="fab fa-python" style="color: #3776AB;"></i>
                     <span class="skill-name">Python</span>
-                    <div class="progress-bar"><div class="progress" style="width: 90%; background: #3776AB;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%; background: #3776AB;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-microchip" style="color: #555;"></i>
+                    <i class="fas fa-code" style="color: #00599C;"></i>
                     <span class="skill-name">C / C++</span>
-                    <div class="progress-bar"><div class="progress" style="width: 85%; background: #555;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #00599C;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <i class="fab fa-html5" style="color: #E34F26;"></i>
-                    <span class="skill-name">HTML / CSS3</span>
-                    <div class="progress-bar"><div class="progress" style="width: 80%; background: #E34F26;"></div></div>
+                    <span class="skill-name">HTML5</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #E34F26;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+                    <span class="skill-name">CSS3</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #1572B6;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-memory" style="color: #555;"></i>
+                    <span class="skill-name">Embedded C</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: #555;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-wind" style="color: #38B2AC;"></i>
+                    <span class="skill-name">Tailwind CSS</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: #38B2AC;"></div>
+                    </div>
                 </div>
             </div>
 
-            <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.1rem; color: #777;">Core Fundamentals</h3>
+            <h3>Core Fundamentals</h3>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <i class="fas fa-project-diagram" style="color: #e6b800;"></i>
-                    <span class="skill-name">Algorithms (DAA)</span>
-                    <div class="progress-bar"><div class="progress" style="width: 85%; background: #e6b800;"></div></div>
+                    <i class="fas fa-network-wired" style="color: #e6b800;"></i>
+                    <span class="skill-name">DSA</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #e6b800;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-cubes" style="color: #e83e8c;"></i>
                     <span class="skill-name">OOPs</span>
-                    <div class="progress-bar"><div class="progress" style="width: 90%; background: #e83e8c;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%; background: #e83e8c;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-brain" style="color: #17a2b8;"></i>
                     <span class="skill-name">Problem Solving</span>
-                    <div class="progress-bar"><div class="progress" style="width: 80%; background: #17a2b8;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #17a2b8;"></div>
+                    </div>
                 </div>
             </div>
 
-            <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.1rem; color: #777;">Domains</h3>
+            <h3>Domains</h3>
             <div class="skills-grid">
                 <div class="skill-card">
                     <i class="fas fa-eye" style="color: #8A2BE2;"></i>
                     <span class="skill-name">Computer Vision</span>
-                    <div class="progress-bar"><div class="progress" style="width: 75%; background: #8A2BE2;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #8A2BE2;"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-robot" style="color: #28a745;"></i>
                     <span class="skill-name">Prompt Engineering</span>
-                    <div class="progress-bar"><div class="progress" style="width: 85%; background: #28a745;"></div></div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #28a745;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-user-astronaut" style="color: #FF5722;"></i>
+                    <span class="skill-name">AI Agents</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: #FF5722;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Machine Learning</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-table" style="color: #150458;"></i>
+                    <span class="skill-name">Pandas</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #150458;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-calculator" style="color: #013243;"></i>
+                    <span class="skill-name">NumPy</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #013243;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-chart-line" style="color: #11557c;"></i>
+                    <span class="skill-name">Matplotlib</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: #11557c;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Cloud & Deployment</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-git-alt" style="color: #F05032;"></i>
+                    <span class="skill-name">Git</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #F05032;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-github" style="color: #181717;"></i>
+                    <span class="skill-name">GitHub</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #181717;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-bolt" style="color: #00C7B7;"></i>
+                    <span class="skill-name">Netlify</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #00C7B7;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-caret-up" style="color: #000000;"></i>
+                    <span class="skill-name">Vercel</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%; background: #000000;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-layer-group" style="color: #FF4B4B;"></i>
+                    <span class="skill-name">Streamlit</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: #FF4B4B;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-smile-beam" style="color: #FFD21E;"></i>
+                    <span class="skill-name">Hugging Face</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%; background: #FFD21E;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Tools & Platforms</h3>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-file-code" style="color: #007ACC;"></i>
+                    <span class="skill-name">VS Code</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%; background: #007ACC;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-book" style="color: #F37626;"></i>
+                    <span class="skill-name">Jupyter</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 85%; background: #F37626;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-infinity" style="color: #F9AB00;"></i>
+                    <span class="skill-name">Google Colab</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 90%; background: #F9AB00;"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-brain" style="color: #6C5CE7;"></i>
+                    <span class="skill-name">Relevance AI</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: #6C5CE7;"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>Let's Connect</h2>
-            <div class="grid">
-                <a href="https://github.com/Tanmay-Godspell" target="_blank" class="card link-card"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://www.linkedin.com/in/chikhalikar-tanmay-a9826be" target="_blank" class="card link-card"><i class="fab fa-linkedin" style="color: #0077b5;"></i> LinkedIn</a>
-                <a href="https://leetcode.com/profile/" target="_blank" class="card link-card"><i class="fas fa-code" style="color: #ffa116;"></i> LeetCode</a>
-                <a href="mailto:chikhalikartanmay9826@gmail.com" class="card link-card"><i class="fas fa-envelope"></i> Email Me</a>
+            <div class="contact-grid">
+                <a href="https://github.com/tanmay-9826" target="_blank" class="contact-card">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/chikhalikar-tanmay-a9826be/" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin" style="color: #0077b5;"></i> LinkedIn
+                </a>
+                <a href="https://leetcode.com/profile/" target="_blank" class="contact-card">
+                    <i class="fas fa-code" style="color: #ffa116;"></i> LeetCode
+                </a>
+                <a href="mailto:chikhalikartanmay9826@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope" style="color: #ea4335;"></i> Email Me
+                </a>
             </div>
         </section>
-
     </main>
 
     <nav class="bottom-nav">
@@ -115,4 +479,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
